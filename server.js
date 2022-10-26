@@ -8,6 +8,16 @@ const sequelize = require(`./config/connection`);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// set up sessions
+const sess = {
+    secret: `Super secret secret`,
+    resave: false,
+    saveUninitialized: false,
+}
+
+app.use(session(sess));
+
 // create template engine
 const hbs = exphbs.create({});
 
