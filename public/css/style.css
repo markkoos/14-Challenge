@@ -1,0 +1,13 @@
+.stuff {
+    background-color: rgb(255, 255, 255);
+};
+
+.nav-bar {
+    background-color: black;
+    list-style: none;
+};
+
+nav {
+    padding: 100px;
+}
+
