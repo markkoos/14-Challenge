@@ -13,14 +13,12 @@ router.get(`/`, async (req, res) => {
                 },
             ],
         });
-        console.log(blogData);
 
         // makes data readable
         const blogs = blogData.map((blog) => 
             blog.get({ plain: true })
         );
 
-        // console.log(blogs);
         res.render(`home`, { blogs, logged_in: req.session.logged_in});
 
     } catch (err) {
@@ -41,8 +39,9 @@ router.get(`/blog/:id`, async (req, res) => {
         });
 
         const blog = blogData.get({ plain: true });
+        console.log(blog);
 
-        res.render(`home`, { ...blog, logged_in: req.session.logged_in })
+        res.render(`blog`, { blog, logged_in: req.session.logged_in })
     } catch (err) {
         res.status(500).json(err);
     }
