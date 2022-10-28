@@ -4,7 +4,7 @@
         {{#each blogs as |blog| }}
         <div class="card">
             <div class="card-header">
-                Posted by {{blog.user.name}} on {{blog.date_created}}
+                Posted by {{blog.user.username}} on {{blog.date_created}}
                 {{!-- Posted by {{}} on {{date_created}} --}}
             </div>
             <div class="card-body">
@@ -15,3 +15,4 @@
         {{/each}}
     </div>
 </body>
+
