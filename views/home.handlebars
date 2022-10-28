@@ -1,48 +1,17 @@
-<head>
-    <nav class="bg-dark nav-bar nav py-2">
-        <div class="buttons px-3">
-            <button type="button" class="btn btn-dark btn-lg">Home</button>
-            <button type="button" class="btn btn-dark btn-lg">Dashboard</button>
-            <button type="button" class="btn btn-dark btn-lg">Logout</button>
-        </div>
-    </nav>
-    <nav class="bg-dark nav-bar nav py-3">
-        <div class="logo pl-5">
-            <h1><span class="badge badge-light">The Tech Blog</span></h1>
-        </div>
-    </nav>
-</head>
-<body class="stuff">
+<body>
     <div class="container blog-cards">
+        {{!-- loops over each blog in array --}}
+        {{#each blogs as |blog| }}
         <div class="card">
             <div class="card-header">
-                "Posted by" Text 
+                Posted by {{blog.user.name}} on {{blog.date_created}}
                 {{!-- Posted by {{}} on {{date_created}} --}}
             </div>
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">{{blog.title}}</h5>
+                <p class="card-text">{{blog.contents}}</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header">
-                "Posted by" Text 
-                {{!-- Posted by {{}} on {{date_created}} --}}
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                "Posted by" Text 
-                {{!-- Posted by {{}} on {{date_created}} --}}
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-        </div>                
+        {{/each}}
     </div>
 </body>
